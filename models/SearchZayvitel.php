@@ -12,7 +12,7 @@ use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\Zayvitel;
 
-class SearchZayvitel
+class SearchZayvitel extends Zayvitel
 {
     public function rules()
     {
@@ -43,8 +43,7 @@ class SearchZayvitel
             'fio' => $this->fio,
             'address' => $this->address,
             'telefon' => $this->telefon,
-            'date' => $this->date,
-            'obrachenie_id' => $this->obrachenie_id,
+           /*'e-mail' => $this->e-mail,*/
         ]);
         /* $query->andFilterWhere(['like', 'f', $this->f])
              ->andFilterWhere(['like', 'i', $this->i])
