@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `kurs`.`zayvitel` (
   `fio` VARCHAR(100) NULL COMMENT 'фио заявителя',
   `address` VARCHAR(250) NULL COMMENT 'адресс заявителя',
   `telefon` INT NULL COMMENT 'номер телефона',
-  `e-mail` VARCHAR(100) NULL COMMENT 'адресс электроной почты',
+  `email` VARCHAR(100) NULL COMMENT 'адресс электроной почты',
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
