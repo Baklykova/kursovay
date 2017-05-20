@@ -24,7 +24,7 @@ return [
         'attribute' => 'reg-num',
         'width' => '100px',
     ],
-   /* [
+   [
         'class' => \kartik\grid\DataColumn::className(),
         'attribute' => 'zayvitel_id',
         'value' => function ($model) {
@@ -43,9 +43,9 @@ return [
     'filterInputOptions' => ['placeholder' => 'Заявитель'],
     'format' => 'raw',
     'width' => '130px',
-],*/
+],
 
-    /* [
+     [
        'class' => \kartik\grid\DataColumn::className(),
        'attribute' => 'ispolnitel_id',
        'value' => function ($model) {
@@ -64,7 +64,7 @@ return [
       'filterInputOptions' => ['placeholder' => 'Исполнитель'],
       'format' => 'raw',
       'width' => '130px',
-  ],*/
+  ],
     [
         'class' => \kartik\grid\DataColumn::className(),
         'attribute' => 'tema_obr',

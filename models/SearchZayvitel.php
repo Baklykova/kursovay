@@ -18,7 +18,7 @@ class SearchZayvitel extends Zayvitel
     {
         return[
             [['telefon'],'integer'],
-            [['email'],'safe'],
+           // [['email'],'safe'],
         ];
     }
     public function search($params)
@@ -43,7 +43,7 @@ class SearchZayvitel extends Zayvitel
             'fio' => $this->fio,
             'address' => $this->address,
             'telefon' => $this->telefon,
-            'email' => $this->email,
+           // 'email' => $this->email,
         ]);
         /* $query->andFilterWhere(['like', 'f', $this->f])
              ->andFilterWhere(['like', 'i', $this->i])

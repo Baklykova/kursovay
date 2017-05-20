@@ -5,7 +5,7 @@ use yii\helpers\Html;
 
 
 $this->title = Yii::t('app', 'Create Zayvitel');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Reg'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Zayvitel'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="zayvitel-create">

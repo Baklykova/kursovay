@@ -1,7 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Valya
- * Date: 04.05.2017
- * Time: 18:57
- */
+
+use yii\widgets\DetailView;
+
+?>
+<div class="zayvitel-view">
+
+    <?= DetailView::widget([
+        'model' => $model,
+        'attributes' => [
+            //'id',
+            'fio',
+            'telefon',
+            'address',
+            'email',
+        ],
+    ]) ?>
+
+</div>
