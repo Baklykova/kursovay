@@ -7,7 +7,7 @@
  */
 
 namespace app\models;
-
+use Yii;
 
 class Ispolnitel extends \yii\db\ActiveRecord
 {
@@ -21,14 +21,14 @@ class Ispolnitel extends \yii\db\ActiveRecord
     {
         return [
             [['fio'],'required'], //обязательное заполнение
-            [['fio', 'dolgnoct',], 'string'], //текстовые значения
+            [['fio', 'dolgnost',], 'string'], //текстовые значения
         ];
     }
     public function attributeLabels()
     {
         return [
             'fio' => Yii::t('app', 'FIO'),
-            'dolgosti' => Yii::t('app', 'Doldnost'),
+            'dolgnost' => Yii::t('app', 'Dolgnost'),
         ];
     }
     public function attributeHints()

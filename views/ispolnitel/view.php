@@ -1,7 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Valya
- * Date: 04.05.2017
- * Time: 18:57
- */
+
+use yii\widgets\DetailView;
+
+?>
+<div class="ispolnitel-view">
+
+    <?= DetailView::widget([
+        'model' => $model,
+        'attributes' => [
+            'id',
+            'fio',
+            'dolgnost',
+        ],
+    ]) ?>
+
+</div>
