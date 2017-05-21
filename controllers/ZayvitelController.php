@@ -13,6 +13,7 @@ use app\models\Zayvitel;
 use app\models\SearchZayvitel;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+use yii\web\NotFoundHttpException;
 use \yii\web\Response;
 use yii\helpers\Html;
 
