@@ -18,7 +18,7 @@ class SearchZayvitel extends Zayvitel
     {
         return[
             [['telefon'],'integer'],
-           // [['email'],'safe'],
+          //  [['email'],'safe'],
         ];
     }
     public function search($params)
