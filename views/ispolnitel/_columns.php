@@ -7,9 +7,7 @@
  */
 
 use yii\helpers\Url;
-use yii\helpers\Html;
-use kartik\grid\GridView;
-use app\components\grid\CombinedDataColumn as CDC;
+
 
 return [
     [
@@ -20,6 +18,7 @@ return [
         'class' => 'kartik\grid\SerialColumn',
         'width' => '30px',
     ],
+
     [
         'class' => \kartik\grid\DataColumn::className(),
         'attribute' => 'fio',

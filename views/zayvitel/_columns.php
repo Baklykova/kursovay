@@ -1,9 +1,6 @@
 <?php
 
 use yii\helpers\Url;
-use yii\helpers\Html;
-use kartik\grid\GridView;
-use app\components\grid\CombinedDataColumn as CDC;
 
 return [
     [
@@ -29,7 +26,10 @@ return [
         'attribute' => 'address',
         'width' => '100px',
     ],
-
+    [
+        'class'=>'\kartik\grid\BooleanColumn',
+        'attribute'=>'active',
+    ],
     [
         'class' => 'kartik\grid\ActionColumn',
         'dropdown' => false,
