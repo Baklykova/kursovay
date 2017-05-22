@@ -20,7 +20,7 @@ class UploadForm extends Model
     public function rules()
     {
         return [
-            [['imegeFile'], 'file', 'scipOnEmpty' =>true, 'extensions' => 'png', 'jpg'],
+            [['imegeFile'], 'file', 'scipOnEmpty' =>true, 'extensions' => 'png, jpg', 'maxFiles' => 4],
             [['pdfFile'], 'file', 'sciponEmpty' => true, 'extensions' => 'pdf']
         ];
     }
@@ -31,10 +31,14 @@ class UploadForm extends Model
     public function uploadImage()
     {
         if ($this->validate()) {
-            $this->imageFile->saveAs('image/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
-            return true;
-        } else {
-            return false;
+            if ($this->validate()) {
+                foreach ($this->imageFiles as $file) {
+                    $file->saveAs('uploads/' . $file->baseName . '.' . $file->extension);
+                }
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 

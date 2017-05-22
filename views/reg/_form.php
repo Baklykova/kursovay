@@ -17,7 +17,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->errorSummary($model); ?>
 
-    <?= $form->field($model, 'reg-num')->textInput() ?>
+    <?= $form->field($model, 'reg_num')->textInput() ?>
+
     <?= $form->field($model, 'zayvitel_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\app\models\Zayvitel::find()->orderBy('id')->asArray()->all(), 'id', 'fio'),
         'options' => ['placeholder' => Yii::t('app', 'Choose')],
@@ -34,7 +35,7 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
     
-    <?= $form->field($model, 'tem_obr')->textInput(['maxlength' => false, ]) ?>
+    <?= $form->field($model, 'tema_obr')->textInput(['maxlength' => false, ]) ?>
 
     <?= $form->field($model, 'date')->widget(\kartik\date\DatePicker::classname(), [
         'value' => date('Y-m-d'),
@@ -48,13 +49,13 @@ use yii\widgets\ActiveForm;
         ]
     ]) ?>
 
-    <?= $form->field($model, 'vid_obr_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\app\models\VidObr::find()->orderBy('id')->asArray()->all(), 'id', 'name'),
+    <?/*= $form->field($model, 'vid_obr_id')->widget(\kartik\widgets\Select2::classname(), [
+        //'data' => \yii\helpers\ArrayHelper::map(\app\models\VidObr::find()->orderBy('id')->asArray()->all(), 'id', 'name'),
         'options' => ['placeholder' => Yii::t('app', 'Choose')],
         'pluginOptions' => [
             'allowClear' => true
         ],
-    ]); ?>
+    ]); */?>
 
     <?= $form->field($model, 'obrachenie_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\app\models\Obrachenie::find()->orderBy('id')->asArray()->all(), 'id', 'krat_obr'),

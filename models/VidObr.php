@@ -43,6 +43,7 @@ class VidObr extends \yii\db\ActiveRecord
         return $this->hasMany(\app\models\Obrachenie::className(), ['vid_obr_id' => 'id']);
     }
 
+
     public static function find()
     {
         return new \app\models\VidObrQuery(get_called_class());

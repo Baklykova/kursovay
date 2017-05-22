@@ -19,7 +19,7 @@ USE `kurs` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `kurs`.`zayvitel` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `fio` VARCHAR(100) NULL COMMENT 'фио заявителя',
+  `fio` VARCHAR(250) NULL COMMENT 'фио заявителя',
   `address` VARCHAR(250) NULL COMMENT 'адресс заявителя',
   `telefon` INT NULL COMMENT 'номер телефона',
   `email` VARCHAR(100) NULL COMMENT 'адресс электроной почты',
@@ -75,7 +75,7 @@ COMMENT = 'таблица исполнителдей';
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `kurs`.`reg_obr` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `reg-num` INT NOT NULL,
+  `reg_num` INT NOT NULL,
   `zayvitel_id` INT NOT NULL,
   `ispolnitel_id` INT NOT NULL COMMENT 'кому направленно обращение и кто его исполнитель',
   `tema_obr` VARCHAR(100) NULL COMMENT 'тема обращения',
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `kurs`.`reg_obr` (
   INDEX `fk_reg_obr_zayvitel_idx` (`zayvitel_id` ASC),
   INDEX `fk_reg_obr_obrachenie1_idx` (`obrachenie_id` ASC),
   INDEX `fk_reg_obr_ispolnitel1_idx` (`ispolnitel_id` ASC),
-  UNIQUE INDEX `reg-num_UNIQUE` (`reg-num` ASC),
+  UNIQUE INDEX `reg-num_UNIQUE` (`reg_num` ASC),
   CONSTRAINT `fk_reg_obr_zayvitel`
     FOREIGN KEY (`zayvitel_id`)
     REFERENCES `kurs`.`zayvitel` (`id`)

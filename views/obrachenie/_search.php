@@ -1,8 +1,14 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Valya
+ * Date: 22.05.2017
+ * Time: 19:00
+ */
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 ?>
-<div class="form-reg-search">
+<div class="form-obrachenie-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -11,21 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id', ['template' => '{input}'])->textInput(['style' => 'display:none']); ?>
 
-    <?php  echo $form->field($model, 'zayvitel_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\app\models\Zayvitel::find()->orderBy('id')->asArray()->all(), 'id', 'fio'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Zayvitel')],
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]);  ?>
 
-    <?php  echo $form->field($model, 'ispolnitel_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\app\models\Ispolnitel::find()->orderBy('id')->asArray()->all(), 'id', 'fio'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose Ispolnitel')],
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]); ?>
     <?php  echo $form->field($model, 'date')->widget(\kartik\datecontrol\DateControl::classname(), [
         'type' => \kartik\datecontrol\DateControl::FORMAT_DATETIME,
         'saveFormat' => 'php:Y-m-d',

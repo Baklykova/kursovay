@@ -15,6 +15,9 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\UploadForm;
 use yii\web\UploadedFile;
+use yii\web\NotFoundHttpException;
+
+
 class ObrachenieController extends Controller
 {
     public function behaviors()
@@ -84,7 +87,7 @@ class ObrachenieController extends Controller
             $model = $this->findModel($id);
         }
 
-        if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -113,7 +116,7 @@ class ObrachenieController extends Controller
     public function actionUpload(){
         $model = new UploadForm();
         if(Yii::$app->request->isPost) {
-            $model->imegeFile = UploadFile::getInstalce($model, 'imageFile');
+            $model->imegeFile = UploadedFile::getInstance($model, 'imageFile');
             if ($model->uploadImage()){
 
                 return;

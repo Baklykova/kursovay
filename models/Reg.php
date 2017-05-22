@@ -19,13 +19,14 @@ class Reg extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['reg-num','zayvitel_id','ispolnitel_id','obrachenie_id'],'required'], //обязательное заполнение
-            [['reg-num','zayvitel_id','ispolnitel_id', 'date', 'obrachenie_id'],'integer'], //целые значения
+            [['reg_num','zayvitel_id','ispolnitel_id', 'obrachenie_id'],'required'], //обязательное заполнение
+            [['reg_num','zayvitel_id','ispolnitel_id', 'date', 'obrachenie_id'],'integer'], //целые значения
             [['tema_obr'], 'string'], //текстовые значения
             [['date'],'safe'], //значения которые принимаются в том виде в котором записываются
             [['zayvitel_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Zayvitel::className(), 'targetAttribute' => ['zayvitel_id' => 'id']],
             [['ispolnitel_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Ispolnitel::className(), 'targetAttribute' => ['ispolnitel_id' => 'id']],
             [['obrachenie_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Obrachenie::className(), 'targetAttribute' => ['obrachenie_id' => 'id']],
+
         ];
     }
 
@@ -33,7 +34,7 @@ class Reg extends \yii\db\ActiveRecord
     {
         return [
             //'id' => Yii::t('app', 'ID'),
-            'reg-num' => Yii::t('app', 'Reg Nun'),
+            'reg_num' => Yii::t('app', 'Reg Nun'),
             'zayvitel_id' => Yii::t('app', 'Zayvitel ID'),
             'ispolnitel_id' => Yii::t('app', 'Ispolnitel ID'),
             'tema_obr' => Yii::t('app', 'Tema Obr'),
@@ -51,6 +52,7 @@ class Reg extends \yii\db\ActiveRecord
     {
         return $this->hasOne(\app\models\Ispolnitel::className(), ['id' => 'ispolnitel_id']);
     }
+
 
     public function getObrachenie()
     {
@@ -73,15 +75,15 @@ class Reg extends \yii\db\ActiveRecord
     {
         return new \app\models\RegQuery(get_called_class());
     }
-   /* public function validateUniqueRegNum(){
+    /*public function validateUniqueRegNum(){
         $model = \app\models\Reg::find();
-        /*Устанавливаем фильтр для проверки существования рег.номера*/
-        /*$model->andFilterWhere([
-            'reg-num'=>$this->reg-num,
-            'vid_obr_id' => $this->obrachenie_id
+        //Устанавливаем фильтр для проверки существования рег.номера
+        $model->andFilterWhere([
+            'reg_num'=>$this->reg_num,
+            'vid_obr_id' => $this->vid_obr_id
         ]);
         if ($model->count() > 0){
-            $this->addError('reg-num','Рег.номер "'. $this->reg-num .'" уже существует для данного типа обращения.');
+            $this->addError('reg_num','Рег.номер "'. $this->reg_num .'" уже существует для данного типа обращения.');
         }
     }*/
 }

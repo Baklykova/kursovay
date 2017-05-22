@@ -20,15 +20,15 @@ return [
         'expandOneOnly' => true,
     ],
     [
-        'class' => \kartik\grid\DataColumn::className(),
-        'attribute' => 'reg-num',
+
+        'attribute' => 'reg_num',
         'width' => '100px',
     ],
    [
         'class' => \kartik\grid\DataColumn::className(),
         'attribute' => 'zayvitel_id',
         'value' => function ($model) {
-            if ($rel = $model->getProfile()->one()) {
+            if ($rel = $model->getZayvitel()->one()) {
                 return Html::a($rel->fio, ['zayvitel/view', 'id' => $rel->zayvitel_id,], ['data-pjax' => 0]);
             } else {
                 return '';
@@ -49,7 +49,7 @@ return [
        'class' => \kartik\grid\DataColumn::className(),
        'attribute' => 'ispolnitel_id',
        'value' => function ($model) {
-           if ($rel = $model->getProfile()->one()) {
+           if ($rel = $model->getIspolnitel()->one()) {
                return Html::a($rel->fio, ['ispolnitel/view', 'id' => $rel->ispolnitel_id,], ['data-pjax' => 0]);
            } else {
                return '';
@@ -74,46 +74,46 @@ return [
         'attribute' => 'date',
         'width' => '160px',
     ],
-    /* [
+     [
         'class' => \kartik\grid\DataColumn::className(),
         'attribute' => 'vid_obr_id',
         'value' => function ($model) {
-            if ($rel = $model->getConsPoints()->one()) {
-                return Html::a($rel->name, ['ovid_obr/view', 'id' => $rel->id,], ['data-pjax' => 0]);
+            if ($rel = $model->getVidObr()->one()) {
+                return Html::a($rel->name, ['vid_obr/view', 'id' => $rel->id,], ['data-pjax' => 0]);
             } else {
                 return '';
             }
         },
         'filterType' => \kartik\grid\GridView::FILTER_SELECT2,
-        'filter' => \yii\helpers\ArrayHelper::map(\app\models\Obrachenie::find()->andFilterWhere(['active' => '1'])
-            ->orderBy('name')->asArray()->all(), 'id', 'name'),
+        /*'filter' => \yii\helpers\ArrayHelper::map(\app\models\VidObr::find()->andFilterWhere(['active' => '1'])
+            ->orderBy('name')->asArray()->all(), 'id', 'name'),*/
         'filterWidgetOptions' => [
             'pluginOptions' => ['allowClear' => true],
         ],
         'filterInputOptions' => ['placeholder' => 'Вид обращения'],
         'format' => 'raw',
         'width' => '130px',
-    ],*/
-   /* [
+    ],
+   [
         'class' => \kartik\grid\DataColumn::className(),
         'attribute' => 'obrachenie_id',
         'value' => function ($model) {
-            if ($rel = $model->getConsPoints()->one()) {
+            if ($rel = $model->getObrachenie()->one()) {
                 return Html::a($rel->krat_obr, ['obrachenie/view', 'id' => $rel->id,], ['data-pjax' => 0]);
             } else {
                 return '';
             }
         },
         'filterType' => \kartik\grid\GridView::FILTER_SELECT2,
-        'filter' => \yii\helpers\ArrayHelper::map(\app\models\Obrachenie::find()->andFilterWhere(['active' => '1'])
-            ->orderBy('krat_obr')->asArray()->all(), 'id', 'krat_obr'),
+       /*'filter' => \yii\helpers\ArrayHelper::map(\app\models\Obrachenie::find()->andFilterWhere(['active' => '1'])
+            ->orderBy('krat_obr')->asArray()->all(), 'id', 'krat_obr'),*/
         'filterWidgetOptions' => [
             'pluginOptions' => ['allowClear' => true],
         ],
         'filterInputOptions' => ['placeholder' => 'Обращение'],
         'format' => 'raw',
         'width' => '130px',
-    ],*/
+    ],
     [
         'class' => 'yii\grid\ActionColumn',
         'template' => '{save-as-new} {view} {update} {delete}',

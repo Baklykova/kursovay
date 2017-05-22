@@ -42,7 +42,9 @@ class Obrachenie extends \yii\db\ActiveRecord
     public function getVidObr(){
         return $this->hasOne(\app\models\VidObr::className (), ['id' => 'vid_obr_id']);
     }
-
+    public function getReg(){
+        return $this->hasOne(\app\models\Reg::className (), ['obrachenie_id' => 'id']);
+    }
     public static function find()
     {
         return new \app\models\ObrachenieQuery(get_called_class());

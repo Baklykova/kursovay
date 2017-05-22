@@ -16,7 +16,7 @@ use kartik\grid\GridView;
     <div class="row">
 <?php 
     $gridColumn = [
-        'reg-num',
+        'reg_num',
         [
             'attribute' => 'zayvitel.fio',
             'label' => Yii::t('app', 'Zayvitel'),
