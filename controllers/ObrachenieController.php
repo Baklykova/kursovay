@@ -119,7 +119,7 @@ class ObrachenieController extends Controller
             $model->imegeFile = UploadedFile::getInstance($model, 'imageFile');
             if ($model->uploadImage()){
 
-                return;
+                return 'Файл загружен';
             }
         }
         return $this->render('upload', ['model' =>$model]);
