@@ -1,21 +1,20 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Valya
- * Date: 21.05.2017
- * Time: 18:46
+ * User: stud05
+ * Date: 22.05.2017
+ * Time: 9:47
  */
 
 namespace app\models;
 
 use Yii;
-class VidObr extends \yii\db\ActiveRecord
+class TypeVydachaOtveta extends \yii\db\ActiveRecord
 {
     public static function tableName()
     {
-        return 'vid_obr';
+        return 'type_vydacha_otveta';
     }
-
     public function rules()
     {
         return [
@@ -34,18 +33,17 @@ class VidObr extends \yii\db\ActiveRecord
     {
         return array_merge(parent::attributeHints(), [
 
-            'name' => Yii::t('app', 'Вид обращения'),
+            'name' => Yii::t('app', 'Тип выдачи ответа'),
         ]);
     }
-
-    public function getObrachenie()
+    public function getIspolnenie()
     {
-        return $this->hasMany(\app\models\Obrachenie::className(), ['vid_obr_id' => 'id']);
+        return $this->hasMany(\app\models\Ispolnenie::className(), ['type_vydacha_otveta_id' => 'id']);
     }
 
     public static function find()
     {
-        return new \app\models\VidObrQuery(get_called_class());
+        return new \app\models\TypeVydachaOtvetaQuery(get_called_class());
     }
 
 }

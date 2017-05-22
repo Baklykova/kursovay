@@ -73,15 +73,15 @@ class Reg extends \yii\db\ActiveRecord
     {
         return new \app\models\RegQuery(get_called_class());
     }
-    public function validateUniqueRegNum(){
+   /* public function validateUniqueRegNum(){
         $model = \app\models\Reg::find();
         /*Устанавливаем фильтр для проверки существования рег.номера*/
-        $model->andFilterWhere([
+        /*$model->andFilterWhere([
             'reg-num'=>$this->reg-num,
-            'obrachenie_id' => $this->obrachenie_id
+            'vid_obr_id' => $this->obrachenie_id
         ]);
         if ($model->count() > 0){
             $this->addError('reg-num','Рег.номер "'. $this->reg-num .'" уже существует для данного типа обращения.');
         }
-    }
+    }*/
 }

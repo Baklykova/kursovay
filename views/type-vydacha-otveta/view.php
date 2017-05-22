@@ -6,12 +6,10 @@
  * Time: 18:57
  */
 
-use kartik\detail\DetailView;
+use yii\widgets\DetailView;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\VidObr*/
 ?>
-<div class="vidObr-view">
+<div class="type-vydacha-otveta-view">
 
     <?= DetailView::widget([
         'model' => $model,

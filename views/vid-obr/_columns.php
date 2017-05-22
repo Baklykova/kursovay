@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Created by PhpStorm.
+ * User: Valya
+ * Date: 21.05.2017
+ * Time: 10:28
+ */
 use yii\helpers\Url;
 
 return [
@@ -13,20 +18,9 @@ return [
     ],
     [
         'class' => \kartik\grid\DataColumn::className(),
-        'attribute' => 'fio',
+        'attribute' => 'name',
         'width' => '100px',
     ],
-    [
-        'class' => \kartik\grid\DataColumn::className(),
-        'attribute' => 'telefon',
-        'width' => '100px',
-    ],
-    [
-        'class' => \kartik\grid\DataColumn::className(),
-        'attribute' => 'address',
-        'width' => '100px',
-    ],
-
     [
         'class' => 'kartik\grid\ActionColumn',
         'dropdown' => false,
@@ -43,5 +37,4 @@ return [
             'data-confirm-title'=>Yii::t('app','Are you sure?'),
             'data-confirm-message'=>Yii::t('app','Are you sure want to delete this item')],
     ],
- ];
-
+];

@@ -7,13 +7,13 @@ use johnitvn\ajaxcrud\CrudAsset;
 use johnitvn\ajaxcrud\BulkButtonWidget;
 
 
-$this->title = Yii::t('app', 'VidObr');
+$this->title = Yii::t('app', 'typeVydachaOtveta');
 $this->params['breadcrumbs'][] = $this->title;
 
 CrudAsset::register($this);
 
 ?>
-<div class="vidObr-index">
+<div class="type-vydacha-otveta-index">
     <div id="ajaxCrudDatatable">
         <?=GridView::widget([
             'id'=>'crud-datatable',
@@ -24,7 +24,7 @@ CrudAsset::register($this);
             'toolbar'=> [
                 ['content'=>
                     Html::a('<i class="glyphicon glyphicon-plus"></i>', ['create'],
-                        ['role'=>'modal-remote','title'=> Yii::t('app', 'Create new') . Yii::t('app', 'VidObr'),'class'=>'btn btn-default']).
+                        ['role'=>'modal-remote','title'=> Yii::t('app', 'Create new') . Yii::t('app', 'typeVydachaOtveta'),'class'=>'btn btn-default']).
                     Html::a('<i class="glyphicon glyphicon-repeat"></i>', [''],
                         ['data-pjax'=>1, 'class'=>'btn btn-default', 'title'=>Yii::t('app', 'Reset Grid')]).
                     '{toggleData}'.
@@ -36,7 +36,7 @@ CrudAsset::register($this);
             'responsive' => true,
             'panel' => [
                 'type' => 'primary',
-                'heading' => '<i class="glyphicon glyphicon-list"></i> '. Yii::t('app', 'VidObr') . Yii::t('app', 'listing'),
+                'heading' => '<i class="glyphicon glyphicon-list"></i> '. Yii::t('app', 'typeVydachaOtveta'),
                 'before'=>'<em>* ' . Yii::t('app', 'Resize table columns just like a spreadsheet by dragging the column edges.') . '</em>',
                 'after'=>BulkButtonWidget::widget([
                         'buttons'=>Html::a('<i class="glyphicon glyphicon-trash"></i>&nbsp; ' . Yii::t('app', 'Delete All'),
