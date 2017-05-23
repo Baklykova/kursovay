@@ -14,13 +14,13 @@ use yii\web\UploadedFile;
 class UploadForm extends Model
 {
 
-    public $imegeFile;
+    public $imageFiles;
     public $pdfFile;
 
     public function rules()
     {
         return [
-            [['imegeFile'], 'file', 'scipOnEmpty' =>true, 'extensions' => 'png, jpg', 'maxFiles' => 4],
+            [['imageFiles'], 'file', 'scipOnEmpty' =>true, 'extensions' => 'png, jpg', 'maxFiles' => 4],
             [['pdfFile'], 'file', 'sciponEmpty' => true, 'extensions' => 'pdf']
         ];
     }

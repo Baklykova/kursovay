@@ -16,6 +16,7 @@ use Yii;
  */
 class Obrachenie extends \yii\db\ActiveRecord
 {
+    public $imageFiles;
     public static function tableName()
     {
      return 'obrachenie';

@@ -18,6 +18,10 @@ use kartik\grid\GridView;
     $gridColumn = [
         'reg_num',
         [
+            'attribute' => 'vidObr.name',
+            'label' => Yii::t('app', 'Vid Obr'),
+        ],
+        [
             'attribute' => 'zayvitel.fio',
             'label' => Yii::t('app', 'Zayvitel'),
         ],
@@ -25,19 +29,11 @@ use kartik\grid\GridView;
             'attribute' => 'ispolnitel.fio',
             'label' => Yii::t('app', 'Ispolnotel'),
         ],
-        'tema_obr',
+        'kyda',
         'date',
-        [
-            'attribute' => 'vidObr.name',
-            'label' => Yii::t('app', 'Vid Obr'),
-        ],
-        [
-            'attribute' => 'obrachenie.krat_obr',
-            'label' => Yii::t('app', 'Obrachenie'),
-        ],
-
-
-        //['attribute' => 'lock', 'hidden' => true],
+        'obrachenie',
+        'primechanie',
+       
     ];
     echo DetailView::widget([
         'model' => $model,

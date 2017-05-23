@@ -71,7 +71,7 @@ class ObrachenieController extends Controller
         $model = new Obrachenie();
 
         if ($model->load(Yii::$app->request->post())) {
-            $model->imegeFiles = UploadedFile::getInstance($model, 'imageFiles');
+            $model->imageFiles = UploadedFile::getInstance($model, 'imageFiles');
             if ($model->uploadImage()){
                 return true;}
             if ($model->save()){

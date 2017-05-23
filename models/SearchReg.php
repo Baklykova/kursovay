@@ -19,8 +19,8 @@ class SearchReg extends Reg
         public function rules()
     {
         return[
-            [['zayvitel_id','ispolnitel_id', 'date', 'obrachenie_id'],'integer'],
-            [['date'],'safe'],
+            [['reg_num','zayvitel_id','ispolnitel_id', 'date', 'vid_obr_id'],'integer'],
+            [['date', 'primechanie'],'safe'],
         ];
     }
 
@@ -48,11 +48,11 @@ class SearchReg extends Reg
         }
         $query->andFilterWhere([
             'id' => $this->id,
+            'vid_obr_id' => $this->vid_obr_id,
             'zayvitel_id' => $this->zayvitel_id,
             'ispolnitel_id' => $this->ispolnitel_id,
-            'tema_obr' => $this->tema_obr,
+            'kyda' => $this->kyda,
             'date' => $this->date,
-            'obrachenie_id' => $this->obrachenie_id,
         ]);
        /* $query->andFilterWhere(['like', 'f', $this->f])
             ->andFilterWhere(['like', 'i', $this->i])

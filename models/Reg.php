@@ -11,7 +11,7 @@ use Yii;
 
 class Reg extends \yii\db\ActiveRecord
 {
-    public static function tableName()
+   public static function tableName()
     {
         return 'reg_obr';
     }
@@ -19,13 +19,13 @@ class Reg extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['reg_num','zayvitel_id','ispolnitel_id', 'obrachenie_id'],'required'], //обязательное заполнение
-            [['reg_num','zayvitel_id','ispolnitel_id', 'date', 'obrachenie_id'],'integer'], //целые значения
-            [['tema_obr'], 'string'], //текстовые значения
-            [['date'],'safe'], //значения которые принимаются в том виде в котором записываются
+            [['reg_num','zayvitel_id','ispolnitel_id', 'vid_obr_id'],'required'], //обязательное заполнение
+            [['reg_num','zayvitel_id','ispolnitel_id', 'date', 'vid_obr_id'],'integer'], //целые значения
+            [['kyda', 'obrachenie'], 'string'], //текстовые значения
+            [['date', 'primechanie'],'safe'], //значения которые принимаются в том виде в котором записываются
             [['zayvitel_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Zayvitel::className(), 'targetAttribute' => ['zayvitel_id' => 'id']],
             [['ispolnitel_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Ispolnitel::className(), 'targetAttribute' => ['ispolnitel_id' => 'id']],
-            [['obrachenie_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Obrachenie::className(), 'targetAttribute' => ['obrachenie_id' => 'id']],
+            [['vid_obr_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\VidObr::className(), 'targetAttribute' => ['vid_obr_id' => 'id']],
 
         ];
     }
@@ -35,11 +35,14 @@ class Reg extends \yii\db\ActiveRecord
         return [
             //'id' => Yii::t('app', 'ID'),
             'reg_num' => Yii::t('app', 'Reg Nun'),
+            'vid_obr_id' => Yii::t('app', 'Vid Obr ID'),
             'zayvitel_id' => Yii::t('app', 'Zayvitel ID'),
             'ispolnitel_id' => Yii::t('app', 'Ispolnitel ID'),
-            'tema_obr' => Yii::t('app', 'Tema Obr'),
+            'kyda' => Yii::t('app', 'Kyda'),
             'date' => Yii::t('app', 'Date'),
-            'obrachenie_id' => Yii::t('app', 'Obrachenie ID'),
+            'obrachenie' => Yii::t('app', 'Obrachenie'),
+            'primechanie' => Yii::t('app', 'Primechanie'),
+          
         ];
     }
 
@@ -54,9 +57,9 @@ class Reg extends \yii\db\ActiveRecord
     }
 
 
-    public function getObrachenie()
+    public function getVidObr()
     {
-        return $this->hasOne(\app\models\Obrachenie::className(), ['id' => 'obrachenie_id']);
+        return $this->hasOne(\app\models\VidObr::className(), ['id' => 'vid_obr_id']);
     }
 
    /* public function behaviors()

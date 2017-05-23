@@ -24,6 +24,26 @@ return [
         'attribute' => 'reg_num',
         'width' => '100px',
     ],
+    [
+        'class' => \kartik\grid\DataColumn::className(),
+        'attribute' => 'vid_obr_id',
+        'value' => function ($model) {
+            if ($rel = $model->getVidObr()->one()) {
+                return Html::a($rel->name, ['vid_obr/view', 'id' => $rel->id,], ['data-pjax' => 0]);
+            } else {
+                return '';
+            }
+        },
+        'filterType' => \kartik\grid\GridView::FILTER_SELECT2,
+        /*'filter' => \yii\helpers\ArrayHelper::map(\app\models\VidObr::find()->andFilterWhere(['active' => '1'])
+            ->orderBy('name')->asArray()->all(), 'id', 'name'),*/
+        'filterWidgetOptions' => [
+            'pluginOptions' => ['allowClear' => true],
+        ],
+        'filterInputOptions' => ['placeholder' => 'Вид обращения'],
+        'format' => 'raw',
+        'width' => '130px',
+    ],
    [
         'class' => \kartik\grid\DataColumn::className(),
         'attribute' => 'zayvitel_id',
@@ -67,52 +87,22 @@ return [
   ],
     [
         'class' => \kartik\grid\DataColumn::className(),
-        'attribute' => 'tema_obr',
+        'attribute' => 'kyda',
         'width' => '100px',
     ],
     [
         'attribute' => 'date',
         'width' => '160px',
     ],
-     [
+    [
         'class' => \kartik\grid\DataColumn::className(),
-        'attribute' => 'vid_obr_id',
-        'value' => function ($model) {
-            if ($rel = $model->getVidObr()->one()) {
-                return Html::a($rel->name, ['vid_obr/view', 'id' => $rel->id,], ['data-pjax' => 0]);
-            } else {
-                return '';
-            }
-        },
-        'filterType' => \kartik\grid\GridView::FILTER_SELECT2,
-        /*'filter' => \yii\helpers\ArrayHelper::map(\app\models\VidObr::find()->andFilterWhere(['active' => '1'])
-            ->orderBy('name')->asArray()->all(), 'id', 'name'),*/
-        'filterWidgetOptions' => [
-            'pluginOptions' => ['allowClear' => true],
-        ],
-        'filterInputOptions' => ['placeholder' => 'Вид обращения'],
-        'format' => 'raw',
-        'width' => '130px',
+        'attribute' => 'obrachenie',
+        'width' => '100px',
     ],
-   [
+    [
         'class' => \kartik\grid\DataColumn::className(),
-        'attribute' => 'obrachenie_id',
-        'value' => function ($model) {
-            if ($rel = $model->getObrachenie()->one()) {
-                return Html::a($rel->krat_obr, ['obrachenie/view', 'id' => $rel->id,], ['data-pjax' => 0]);
-            } else {
-                return '';
-            }
-        },
-        'filterType' => \kartik\grid\GridView::FILTER_SELECT2,
-       /*'filter' => \yii\helpers\ArrayHelper::map(\app\models\Obrachenie::find()->andFilterWhere(['active' => '1'])
-            ->orderBy('krat_obr')->asArray()->all(), 'id', 'krat_obr'),*/
-        'filterWidgetOptions' => [
-            'pluginOptions' => ['allowClear' => true],
-        ],
-        'filterInputOptions' => ['placeholder' => 'Обращение'],
-        'format' => 'raw',
-        'width' => '130px',
+        'attribute' => 'primechanie',
+        'width' => '100px',
     ],
     [
         'class' => 'yii\grid\ActionColumn',

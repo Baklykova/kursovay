@@ -36,6 +36,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'reg_num',
             [
+                'attribute' => 'vidObr.name',
+                'label' => Yii::t('app', 'Vid Obr'),
+            ],
+            [
                 'attribute' => 'zayvitel.fio',
                 'label' => Yii::t('app', 'Zayvitel'),
             ],
@@ -44,18 +48,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => Yii::t('app', 'Ispolnitel'),
             ],
             [
-                'tema_obr'
+                'kyda'
             ],
             [
                 'data'
             ],
             [
-                'attribute' => 'vidObr.name',
-                'label' => Yii::t('app', 'Vid Obr'),
+                'obrachenie'
             ],
             [
-                'attribute' => 'obrachenie.krat_obr',
-                'label' => Yii::t('app', 'Obrachenie'),
+                'primechanie'
             ],
        ];
         echo DetailView::widget([

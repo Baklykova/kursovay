@@ -18,6 +18,14 @@ use yii\widgets\ActiveForm;
     <?= $form->errorSummary($model); ?>
 
     <?= $form->field($model, 'reg_num')->textInput() ?>
+    
+    <?= $form->field($model, 'vid_obr_id')->widget(\kartik\widgets\Select2::classname(), [
+        //'data' => \yii\helpers\ArrayHelper::map(\app\models\VidObr::find()->orderBy('id')->asArray()->all(), 'id', 'name'),
+        'options' => ['placeholder' => Yii::t('app', 'Choose')],
+        'pluginOptions' => [
+            'allowClear' => true
+        ],
+    ]); ?>
 
     <?= $form->field($model, 'zayvitel_id')->widget(\kartik\widgets\Select2::classname(), [
         'data' => \yii\helpers\ArrayHelper::map(\app\models\Zayvitel::find()->orderBy('id')->asArray()->all(), 'id', 'fio'),
@@ -35,7 +43,7 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
     
-    <?= $form->field($model, 'tema_obr')->textInput(['maxlength' => false, ]) ?>
+    <?= $form->field($model, 'kyda')->textInput(['maxlength' => false, ]) ?>
 
     <?= $form->field($model, 'date')->widget(\kartik\date\DatePicker::classname(), [
         'value' => date('Y-m-d'),
@@ -48,22 +56,10 @@ use yii\widgets\ActiveForm;
             'todayBtn' => true,
         ]
     ]) ?>
+    <?= $form->field($model, 'obrachenie')->textarea(['rows' => 2, 'cols' => 5]) ?>
+    
+    <?= $form->field($model, 'primechanie')->fileInput() ?>
 
-    <?/*= $form->field($model, 'vid_obr_id')->widget(\kartik\widgets\Select2::classname(), [
-        //'data' => \yii\helpers\ArrayHelper::map(\app\models\VidObr::find()->orderBy('id')->asArray()->all(), 'id', 'name'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose')],
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]); */?>
-
-    <?= $form->field($model, 'obrachenie_id')->widget(\kartik\widgets\Select2::classname(), [
-        'data' => \yii\helpers\ArrayHelper::map(\app\models\Obrachenie::find()->orderBy('id')->asArray()->all(), 'id', 'krat_obr'),
-        'options' => ['placeholder' => Yii::t('app', 'Choose')],
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]); ?>
 
     <div class="form-group">
         <?php if(Yii::$app->controller->action->id != 'save-as-new'): ?>
