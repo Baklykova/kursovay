@@ -11,6 +11,9 @@ namespace app\models;
 use Yii;
 
 
+/**
+ * @property UploadedFile imegeFiles
+ */
 class Obrachenie extends \yii\db\ActiveRecord
 {
     public static function tableName()
@@ -49,5 +52,16 @@ class Obrachenie extends \yii\db\ActiveRecord
     {
         return new \app\models\ObrachenieQuery(get_called_class());
     }
-
+    
+    public function uploadImage()
+    {
+        if ($this->validate()) {
+            foreach ($this->imageFiles as $file) {
+                $file->saveAs('image/' . $file->baseName . '.' . $file->extension);
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

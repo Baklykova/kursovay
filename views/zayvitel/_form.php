@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'fio')->textInput() ?>
     <?= $form->field($model, 'telefon')->textInput() ?>
     <?= $form->field($model, 'address')->textInput() ?>
-    <?php /*= $form->field($model, 'email')->textInput() */?>
+    <?= $form->field($model, 'email')->input('email') ?>
 
         <?php if (!Yii::$app->request->isAjax){ ?>
             <div class="form-group">

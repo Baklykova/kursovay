@@ -23,7 +23,7 @@ class Zayvitel extends \yii\db\ActiveRecord
             [['fio'],'required'], //обязательное заполнение
             [['telefon'],'integer'], //целые значения
             [['fio', 'address',], 'string'], //текстовые значения
-           // [['email'],'safe'], //значения которые принимаются в том виде в котором записываются
+            [['email'],'safe'], //значения которые принимаются в том виде в котором записываются
             ];
     }
     public function attributeLabels()
@@ -43,7 +43,7 @@ class Zayvitel extends \yii\db\ActiveRecord
             'fio' => Yii::t('app', 'ФИО заявителя'),
             'address' => Yii::t('app', 'Адрес'),
             'telefon' => Yii::t('app', 'Телефон'),
-           // 'email' => Yii::t('app', 'Адрес эл.почты'),
+            'email' => Yii::t('app', 'Адрес эл.почты'),
         ]);
     }
 

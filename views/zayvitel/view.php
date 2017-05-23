@@ -12,7 +12,7 @@ use yii\widgets\DetailView;
             'fio',
             'telefon',
             'address',
-           // 'email',
+            'email',
         ],
     ]) ?>
 

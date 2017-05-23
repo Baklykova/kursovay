@@ -26,7 +26,11 @@ return [
         'attribute' => 'address',
         'width' => '100px',
     ],
-
+    [
+        'class' => \kartik\grid\DataColumn::className(),
+        'attribute' => 'email',
+        'width' => '100px',
+    ],
     [
         'class' => 'kartik\grid\ActionColumn',
         'dropdown' => false,

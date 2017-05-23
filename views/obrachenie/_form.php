@@ -13,12 +13,12 @@ use yii\widgets\ActiveForm;
 
 <div class="obrachenie-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['id' => 'blog-form', 'options' => ['enctype' => 'multipart/form-data']]); ?>
 
     <?= $form->errorSummary($model); ?>
 
 <?= $form->field($model, 'krat_obr')->textInput(['maxlength' => false, ]) ?>
-<?= $form->field($model, 'dop_sved')->textInput(['maxlength' => false, ]) ?>
+<?= $form->field($model, 'dop_sved')->textarea(['rows' => 2, 'cols' => 5]) ?>
     <?= $form->field($model, 'primechanie')->fileInput() ?>
 
     <?= $form->field($model, 'vid_obr_id')->widget(\kartik\widgets\Select2::classname(),

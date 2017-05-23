@@ -31,14 +31,12 @@ class UploadForm extends Model
     public function uploadImage()
     {
         if ($this->validate()) {
-            if ($this->validate()) {
-                foreach ($this->imageFiles as $file) {
-                    $file->saveAs('image/' . $file->baseName . '.' . $file->extension);
-                }
-                return true;
-            } else {
-                return false;
+            foreach ($this->imageFiles as $file) {
+                $file->saveAs('image/' . $file->baseName . '.' . $file->extension);
             }
+            return true;
+        } else {
+            return false;
         }
     }
 
