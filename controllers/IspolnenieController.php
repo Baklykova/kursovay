@@ -116,7 +116,7 @@ class IspolnenieController extends Controller
             $model->pdfFile = UploadedFile::getInstance($model, 'pdfFile');
             if ($model->uploadPdf()){
 
-                return 'Файл загружен';
+                return true;
             }
         }
         return $this->render('upload', ['model' =>$model]);
