@@ -8,7 +8,7 @@ use johnitvn\ajaxcrud\CrudAsset;
 use johnitvn\ajaxcrud\BulkButtonWidget;
 
 
-$this->title = Yii::t('app', 'Ispolnitel');
+$this->title = Yii::t('app', 'Исполнитель');
 $this->params['breadcrumbs'][] = $this->title;
 
 CrudAsset::register($this);
@@ -25,9 +25,9 @@ CrudAsset::register($this);
                 'toolbar'=> [
                     ['content'=>
                         Html::a('<i class="glyphicon glyphicon-plus"></i>', ['create'],
-                            ['role'=>'modal-remote','title'=> Yii::t('app', 'Create new') . Yii::t('app', 'Zayvitel'),'class'=>'btn btn-default']).
+                            ['role'=>'modal-remote','title'=> Yii::t('app', 'Создать новую') . Yii::t('app', 'Запись'),'class'=>'btn btn-default']).
                         Html::a('<i class="glyphicon glyphicon-repeat"></i>', [''],
-                            ['data-pjax'=>1, 'class'=>'btn btn-default', 'title'=>Yii::t('app', 'Reset Grid')]).
+                            ['data-pjax'=>1, 'class'=>'btn btn-default', 'title'=>Yii::t('app', 'Обновить')]).
                         '{toggleData}'
                         //'{export}'
                     ],
@@ -37,18 +37,18 @@ CrudAsset::register($this);
                 'responsive' => true,
                 'panel' => [
                     'type' => 'primary',
-                    'heading' => '<i class="glyphicon glyphicon-list"></i> '. Yii::t('app', 'Ispolnitel') . Yii::t('app', 'listing'),
-                    'before'=>'<em>* ' . Yii::t('app', 'Resize table columns just like a spreadsheet by dragging the column edges.') . '</em>',
+                    'heading' => '<i class="glyphicon glyphicon-list"></i> '. Yii::t('app', 'Исполнитель'),
+                    'before'=>'<em>* ' . Yii::t('app', 'Изменение размера столбцов таблицы происходит так же, как таблицы - перетаскивая края столбцов.') . '</em>',
                     'after'=>BulkButtonWidget::widget([
-                            'buttons'=>Html::a('<i class="glyphicon glyphicon-trash"></i>&nbsp; ' . Yii::t('app', 'Delete All'),
+                            'buttons'=>Html::a('<i class="glyphicon glyphicon-trash"></i>&nbsp; ' . Yii::t('app', 'Удалить все'),
                                 ["bulk-delete"] ,
                                 [
                                     "class"=>"btn btn-danger btn-xs",
                                     'role'=>'modal-remote-bulk',
                                     'data-confirm'=>false, 'data-method'=>false,// for overide yii data api
                                     'data-request-method'=>'post',
-                                    'data-confirm-title'=>Yii::t('app', 'Are you sure?'),
-                                    'data-confirm-message'=>Yii::t('app', 'Are you sure want to delete this item')                                ]),
+                                    'data-confirm-title'=>Yii::t('app', 'Вы уверены?'),
+                                    'data-confirm-message'=>Yii::t('app', 'Вы уверены, что хотите удалить этот элемент?')                                ]),
                         ]).
                         '<div class="clearfix"></div>',
                 ]

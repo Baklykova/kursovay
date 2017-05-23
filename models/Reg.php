@@ -20,7 +20,7 @@ class Reg extends \yii\db\ActiveRecord
     {
         return [
             [['reg_num','zayvitel_id','ispolnitel_id', 'vid_obr_id'],'required'], //обязательное заполнение
-            [['reg_num','zayvitel_id','ispolnitel_id', 'date', 'vid_obr_id'],'integer'], //целые значения
+            [['reg_num','zayvitel_id','ispolnitel_id', 'vid_obr_id'],'integer'], //целые значения
             [['kyda', 'obrachenie'], 'string'], //текстовые значения
             [['date', 'primechanie'],'safe'], //значения которые принимаются в том виде в котором записываются
             [['zayvitel_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Zayvitel::className(), 'targetAttribute' => ['zayvitel_id' => 'id']],
@@ -34,14 +34,14 @@ class Reg extends \yii\db\ActiveRecord
     {
         return [
             //'id' => Yii::t('app', 'ID'),
-            'reg_num' => Yii::t('app', 'Reg Nun'),
-            'vid_obr_id' => Yii::t('app', 'Vid Obr ID'),
-            'zayvitel_id' => Yii::t('app', 'Zayvitel ID'),
-            'ispolnitel_id' => Yii::t('app', 'Ispolnitel ID'),
-            'kyda' => Yii::t('app', 'Kyda'),
-            'date' => Yii::t('app', 'Date'),
-            'obrachenie' => Yii::t('app', 'Obrachenie'),
-            'primechanie' => Yii::t('app', 'Primechanie'),
+            'reg_num' => Yii::t('app', 'Регистрационнный номер'),
+            'vid_obr_id' => Yii::t('app', 'Вид обращения'),
+            'zayvitel_id' => Yii::t('app', 'Заявитель'),
+            'ispolnitel_id' => Yii::t('app', 'Исполнитель'),
+            'kyda' => Yii::t('app', 'Куда'),
+            'date' => Yii::t('app', 'Дата'),
+            'obrachenie' => Yii::t('app', 'Обращение'),
+            'primechanie' => Yii::t('app', 'Примечание'),
           
         ];
     }

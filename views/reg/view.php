@@ -9,13 +9,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 use kartik\grid\GridView;
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Reg'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Обращения'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="reg-view">
     <div class="row">
         <div class="col-sm-8">
-            <h2><?= Yii::t('app', 'Reg').' '. Html::encode($this->title) ?></h2>
+            <h2><?= Yii::t('app', 'Обращения').' '. Html::encode($this->title) ?></h2>
         </div>
         <div class="col-sm-4" style="margin-top: 15px">
             <?= Html::a(Yii::t('app', 'Save As New'), ['save-as-new', 'id' => $model->id], ['class' => 'btn btn-info']) ?>

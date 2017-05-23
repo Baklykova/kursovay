@@ -3,7 +3,7 @@ use yii\helpers\Html;
 use kartik\export\ExportMenu;
 use kartik\grid\GridView;
 
-$this->title = Yii::t('app', 'Исполнение');
+$this->title = Yii::t('app', 'Исполнение обращения');
 $this->params['breadcrumbs'][] = $this->title;
 $search = "$('.search-button').click(function(){
 	$('.search-form').toggle(1000);
@@ -15,7 +15,7 @@ $this->registerJs($search);
 
     <h2><?= Html::encode($this->title) ?></h2>
     <p>
-        <?= Html::a(Yii::t('app', 'Create Reg'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Сформировать новый ответ'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php

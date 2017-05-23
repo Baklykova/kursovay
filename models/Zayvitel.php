@@ -30,10 +30,10 @@ class Zayvitel extends \yii\db\ActiveRecord
     {
         return [
             //'id' => Yii::t('app', 'ID'),
-            'fio' => Yii::t('app', 'FIO'),
-            'address' => Yii::t('app', 'Address'),
-            'telefon' => Yii::t('app', 'Telefon'),
-            //'email' => Yii::t('app', 'Email'),
+            'fio' => Yii::t('app', 'ФИО'),
+            'address' => Yii::t('app', 'Адрес'),
+            'telefon' => Yii::t('app', 'Телефон'),
+            'email' => Yii::t('app', 'Email'),
         ];
     }
     public function attributeHints()

@@ -27,8 +27,8 @@ class Ispolnitel extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'fio' => Yii::t('app', 'FIO'),
-            'dolgnost' => Yii::t('app', 'Dolgnost'),
+            'fio' => Yii::t('app', 'ФИО'),
+            'dolgnost' => Yii::t('app', 'Долность'),
         ];
     }
     public function attributeHints()

@@ -4,8 +4,8 @@
 use yii\helpers\Html;
 
 
-$this->title = Yii::t('app', 'Create Reg');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Reg'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Зарегистрировать новое');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Обращения'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="reg-create">

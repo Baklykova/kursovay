@@ -9,28 +9,36 @@ if (isset($this)) {
 <div class="site-index">
 
     <div class="jumbotron">
+        <p class="lead">Разработка интерфейса ИС:</p>
+
         <h1>Учет обращений граждан</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
 
-        <p><a class="btn btn-lg btn-primary" href="<?= \yii\helpers\Url::to(['/reg/index'])?>">Журнал учета</a></p>
+        <p><a class="btn btn-lg btn-primary" href="<?= \yii\helpers\Url::to(['/reg/index'])?>">Журнал обращений</a>
+            <a class="btn btn-lg btn-primary" href="<?= \yii\helpers\Url::to(['/ispolnenie/index'])?>">Ответы</a></p>
         <p><a class="btn btn-lg btn-success" href="<?= \yii\helpers\Url::to(['/reg/create'])?>">Зарегистрировать новое обращение</a></p>
+        <!-- Split button -->
+        <div class="btn-group">
+            <button type="button" class="btn btn-info">
+                Справки
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="<?= \yii\helpers\Url::to(['/vid-obr/index'])?>">Вид обращений</a></li>
+                <li><a href="<?= \yii\helpers\Url::to(['/type-vydacha-otveta/index'])?>">Тип выдачи ответа</a></li>
+            </ul>
+        </div>
+        <!-- Split button -->
+        <div class="btn-group">
+            <button type="button" class="btn btn-info">
+                    Люди
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="<?= \yii\helpers\Url::to(['/zayvitel/index'])?>">Заявитель</a></li>
+                <li><a href="<?= \yii\helpers\Url::to(['/ispolnitel/index'])?>">Исполнитель</a></li>
+            </ul>
+        </div>
     </div>
 
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-         </div>
-
-    </div>
 </div>

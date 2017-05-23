@@ -34,12 +34,12 @@ class Ispolnenie extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'reg_obr_id' => Yii::t('app', 'Reg ID'),
-            'date' => Yii::t('app', 'Date'),
-            'rezyltat_otveta' => Yii::t('app', 'Rezyltat'),
-            'otvet' => Yii::t('app', 'Otvet'),
-            'dop_otveta' => Yii::t('app', 'Dop Otveta'),
-            'type_vydacha_otveta_id' => Yii::t('app', 'Type Vydacha Otveta ID'),
+            'reg_obr_id' => Yii::t('app', 'Регистрационный номер'),
+            'date' => Yii::t('app', 'Дата'),
+            'rezyltat_otveta' => Yii::t('app', 'Результат'),
+            'otvet' => Yii::t('app', 'Ответ'),
+            'dop_otveta' => Yii::t('app', 'Дополнения'),
+            'type_vydacha_otveta_id' => Yii::t('app', 'Тип выдачи ответа'),
         ];
     }
 

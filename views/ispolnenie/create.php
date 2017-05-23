@@ -3,8 +3,8 @@
 use yii\helpers\Html;
 
 
-$this->title = Yii::t('app', 'Create Ispolnenie');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Obrachenie'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Новый ответ');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Исполнение обращения'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ispolnenie-create">
