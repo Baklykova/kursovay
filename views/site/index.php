@@ -19,7 +19,7 @@ if (isset($this)) {
         <p><a class="btn btn-lg btn-success" href="<?= \yii\helpers\Url::to(['/reg/create'])?>">Зарегистрировать новое обращение</a></p>
         <!-- Split button -->
         <div class="btn-group">
-            <button type="button" class="btn btn-info">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
                 Справки
                 <span class="caret"></span>
             </button>
@@ -30,7 +30,7 @@ if (isset($this)) {
         </div>
         <!-- Split button -->
         <div class="btn-group">
-            <button type="button" class="btn btn-info">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
                     Люди
                 <span class="caret"></span>
             </button>

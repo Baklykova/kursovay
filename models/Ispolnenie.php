@@ -23,7 +23,7 @@ class Ispolnenie extends \yii\db\ActiveRecord
     {
         return [
             [['reg_obr_id','date', 'type_vydacha_otveta_id'],'required'], //обязательное заполнение
-            [['reg_obr_id','date', 'type_vydacha_otveta_id'],'integer'], //целые значения
+            [['reg_obr_id', 'type_vydacha_otveta_id'],'integer'], //целые значения
             [['rezyltat_otveta', 'otvet',], 'string'], //текстовые значения
             [['date', 'dop_otveta'],'safe'], //значения которые принимаются в том виде в котором записываются
             [['reg_obr_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Reg::className(), 'targetAttribute' => ['reg_obr_id' => 'id']],

@@ -34,8 +34,8 @@ return [
             }
         },
         'filterType' => \kartik\grid\GridView::FILTER_SELECT2,
-        /*'filter' => \yii\helpers\ArrayHelper::map(\app\models\Reg::find()->andFilterWhere(['active' => '1'])
-            ->orderBy('reg_num')->asArray()->all(), 'id', 'reg_num'),*/
+        'filter' => \yii\helpers\ArrayHelper::map(\app\models\Reg::find()->andFilterWhere(['active' => '1'])
+            ->orderBy('reg_num')->asArray()->all(), 'id', 'reg_num'),
         'filterWidgetOptions' => [
             'pluginOptions' => ['allowClear' => true],
         ],

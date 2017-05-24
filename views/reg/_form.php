@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'reg_num')->textInput() ?>
     
     <?= $form->field($model, 'vid_obr_id')->widget(\kartik\widgets\Select2::classname(), [
-        //'data' => \yii\helpers\ArrayHelper::map(\app\models\VidObr::find()->orderBy('id')->asArray()->all(), 'id', 'name'),
+        'data' => \yii\helpers\ArrayHelper::map(\app\models\VidObr::find()->orderBy('id')->asArray()->all(), 'id', 'name'),
         'options' => ['placeholder' => Yii::t('app', 'Choose')],
         'pluginOptions' => [
             'allowClear' => true

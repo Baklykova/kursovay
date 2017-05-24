@@ -20,7 +20,7 @@ class Reg extends \yii\db\ActiveRecord
     {
         return [
             [['reg_num','zayvitel_id','ispolnitel_id', 'vid_obr_id'],'required'], //обязательное заполнение
-            [['reg_num','zayvitel_id','ispolnitel_id', 'vid_obr_id'],'integer'], //целые значения
+            [['zayvitel_id','ispolnitel_id', 'vid_obr_id'],'integer'], //целые значения
             [['kyda', 'obrachenie'], 'string'], //текстовые значения
             [['date', 'primechanie'],'safe'], //значения которые принимаются в том виде в котором записываются
             [['zayvitel_id'], 'exist', 'skipOnError' => true, 'targetClass' => \app\models\Zayvitel::className(), 'targetAttribute' => ['zayvitel_id' => 'id']],
